@@ -9,7 +9,7 @@
  * @since 2.0
  */
 
-namespace cyneek\yii2\widget\upload\crop;
+namespace uitrick\yii2\widget\upload\crop;
 
 use Yii;
 use yii\base\InvalidParamException;

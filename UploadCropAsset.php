@@ -6,7 +6,7 @@
  * @since 1.0
  */
 
-namespace cyneek\yii2\widget\upload\crop;
+namespace uitrick\yii2\widget\upload\crop;
 
 use yii\web\AssetBundle;
 
