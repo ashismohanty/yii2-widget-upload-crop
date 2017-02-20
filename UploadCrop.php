@@ -43,7 +43,7 @@ class UploadCrop extends Widget
 	var $maxSize = 300;
 
 	/** @var string */
-	var $defaultPreviewImg = NULL;
+	var $defaultPreviewImage = NULL;
 
 	/**
 	 * only call this method after a form closing and
@@ -110,13 +110,13 @@ class UploadCrop extends Widget
 			echo Html::beginTag('div', ['class' => 'preview-pane']);
 				echo Html::beginTag('div', ['class' => 'preview-container']);
 					//echo Html::img('', ['class' => 'preview_image']);
-					if (!is_null($this->defaultPreviewImg))
+					if (!is_null($this->defaultPreviewImage))
 					{
-						$defaultPreviewImgOptions = [							
+						$defaultPreviewImageOptions = [							
 							'id' => Yii::$app->getSecurity()->generateRandomString(10),
 							'class' => 'preview_image'
 						];
-						echo Html::img($this->defaultPreviewImg, $defaultPreviewImgOptions);
+						echo Html::img($this->defaultPreviewImage, $defaultPreviewImageOptions);
 					}
 				echo Html::endTag('div');
 			echo Html::endTag('div');
