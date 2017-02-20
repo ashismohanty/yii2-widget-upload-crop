@@ -1,0 +1,11 @@
+/**
+ * Uses cropper javascript widget from https://github.com/fengyuanchen/cropper
+ *
+ * Author: Joseba Juaniz
+ * Year: 2015
+ * 
+ * Modified by: Ashis Kumar Mohanty
+ * Year: 2017
+ */
+
+.uploadcrop .cropper-preview,.uploadcrop .cropper-wrapper{border:1px solid #eee;background-color:#fff;margin-top:15px;overflow:hidden}.uploadcrop .cropper-wrapper{height:364px;width:100%}.uploadcrop .cropper-wrapper img{display:block;height:auto;max-width:100%}.uploadcrop .cropper-preview{float:left;margin-right:15px;border-radius:4px}.uploadcrop .cropper-preview img{width:100%}.uploadcrop .preview-lg{height:184px;width:184px;margin-top:15px}.uploadcrop .preview-md{height:100px;width:100px}.uploadcrop .preview-sm{height:50px;width:50px}@media (min-width:992px){.uploadcrop .cropper-preview{float:none}}.uploadcrop .cropper-btns{margin-top:10px;margin-bottom:10px}.uploadcrop .cropper-btns .btn-group{margin-right:5px}.uploadcrop .preview-pane{display:block;z-index:2000;padding:6px}.uploadcrop .preview-pane .preview-container{overflow:hidden}
