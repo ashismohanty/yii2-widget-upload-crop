@@ -60,7 +60,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 * Install [Yii 2](http://www.yiiframework.com/download)
 * Install the package via [composer](http://getcomposer.org/download/) 
 		
-		"cyneek/yii2-widget-upload-crop": "dev-master"
+		"uitrick/yii2-widget-upload-crop": "dev-master"
 		
 * Profit!
 
@@ -68,7 +68,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 The widget will include by default all neccesary javaScript and fields in the form for its proper operation. Once the data has been sent from the form to the server, it will be necessary to get the file and crop data to be able to apply them to the model attribute and the image itself.
 
-	echo \cyneek\yii2\widget\upload\crop\UploadCrop::widget(['form' => $form, 'model' => $model, 'attribute' => 'fieldName']);
+	echo \uitrick\yii2\widget\upload\crop\UploadCrop::widget(['form' => $form, 'model' => $model, 'attribute' => 'fieldName']);
 
 Since this library it's a widget input field not linked to the ActiveForm system itself, there is the problem that it's impossible to make an input including all the default options and exceptions that the form that holds the widget has. This includes php or css changes, client validation configuration, and so on. To be able to solve this problem, the widget has an option that lets the developer adding the ActiveForm object into the widget, if defined, the widget will use it to make all the input fields.
 
