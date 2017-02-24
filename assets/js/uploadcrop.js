@@ -25,7 +25,7 @@
 
     var console = window.console || { log: function() {} };
 
-    function CropAvatar($element, options) {
+    function CropModal($element, options) {
 
         //cropper options
         this._jcropOptions = options['jcropOptions'];
@@ -59,8 +59,8 @@
         this.init();
     }
 
-    CropAvatar.prototype = {
-        constructor: CropAvatar,
+    CropModal.prototype = {
+        constructor: CropModal,
 
         support: {
             fileList: !!$('<input type="file">').prop('files'),
@@ -88,6 +88,8 @@
 
         initModal: function() {
             this.$avatarModal.modal({
+		backdrop: 'static',
+                keyboard: false,
                 show: false
             });
         },
@@ -158,10 +160,14 @@
                         }
 
                         this.url = URL.createObjectURL(file);
-                        this.startCropper();
 
-                    } else { // NOT a image file                        
+                        //add an delay to get the width of the cropper wrapper
+                        var _that = this;
+                        setTimeout(function() { _that.startCropper() }, 500);
+
+                    } else { // NOT a image file
                         this.alert('Please upload an image file.');
+                        this.$avatarInput.val('');
                     }
                 }
             } else {
@@ -193,7 +199,9 @@
         },
 
         startCropper: function() {
+
             var _this = this;
+
             if (this.active) {
                 this.$img.cropper('replace', this.url);
             } else {
@@ -225,6 +233,7 @@
                 _this.clearAlert();
                 _this.stopCropper();
             });
+
         },
 
         stopCropper: function() {
@@ -254,7 +263,7 @@
 
                 //add a class to main container
                 this.$container.addClass('cropper-done');
-
+                
                 this.stopCropper();
                 this.$avatarModal.modal('hide');
             }
@@ -283,8 +292,41 @@
     };
 
     //Extend jQuery with uploadCrop function.
-    $.fn.uploadCrop = function(options) {
-        new CropAvatar($(this), options);
+
+    var NAMESPACE = 'uploadCrop';
+    var noConflictUploadCrop = $.fn.uploadCrop;
+
+    //Extend jQuery with uploadCrop function.
+    $.fn.uploadCrop = function jQueryUploadCrop(option) {
+
+        var result = void 0;
+
+        return this.each(function(i, element) {
+
+            var $this = $(element);
+            var data = $this.data(NAMESPACE);
+
+            if (!data) {
+                var options = $.extend({}, $this.data(), $.isPlainObject(option) && option);
+                $this.data(NAMESPACE, data = new CropModal($this, options));
+            }
+
+            if (typeof option === 'string') {
+                var fn = data[option];
+
+                if ($.isFunction(fn)) {
+                    result = fn.apply(data, args);
+                }
+            }
+
+            return typeof result !== 'undefined' ? result : this;
+        });
     }
+
+    // No conflict
+    $.fn.uploadCrop.noConflict = function noConflict() {
+        $.fn.uploadCrop = noConflictUploadCrop;
+        return this;
+    };
 
 });

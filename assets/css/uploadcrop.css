@@ -8,6 +8,19 @@
  * Year: 2017
  */
 
+.uploadcrop {
+    position: relative;
+    min-height: 250px;
+    margin-bottom: 25px;
+    width: 100%;
+    color: #666;
+    text-align: center;
+}
+
+.uploadcrop input {
+    display: none;
+}
+
 .uploadcrop .cropper-wrapper {
     height: 364px;
     width: 100%;
@@ -68,12 +81,91 @@
     margin-right: 5px;
 }
 
+
+/* Label re-structure */
+
+.uploadcrop label.control-label,
 .uploadcrop .preview-pane {
-    display: block;
-    z-index: 2000;
-    padding: 6px;
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.uploadcrop .preview-pane {
+    z-index: 500;
+    top: 12%;
+    height: 88%;
+}
+
+.uploadcrop label.control-label {
+    z-index: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+.uploadcrop .form-group {
+    margin-bottom: 0px;
 }
 
 .uploadcrop .preview-pane .preview-container {
     overflow: hidden;
+    height: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.uploadcrop .preview-pane .preview-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.uploadcrop .help-block {
+    position: absolute;
+    bottom: -27px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.uploadcrop .modal h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+
+/* Solid line around cropper */
+
+.uploadcrop-solid-border {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 10px 16px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+
+/* Dotted line around cropper */
+
+.uploadcrop-dotted {
+    border: 1px dashed #ccc;
+    margin-bottom: 35px;
+}
+
+.uploadcrop-solid-border .uploadcrop,
+.uploadcrop-dotted .uploadcrop {
+    margin-bottom: 0px;
+}
+
+.uploadcrop-solid-border .uploadcrop .help-block,
+.uploadcrop-dotted .uploadcrop .help-block {
+    bottom: -37px;
 }
