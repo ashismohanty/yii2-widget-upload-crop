@@ -127,6 +127,7 @@ class UploadCrop extends Widget
 			'closeButton' => [],
 			'footer' => '<div class="row cropper-btns"><div class="col-md-6">' . Html::button('Cancel', ['id' => $this->imageOptions['id'].'_button_cancel', 'class' => 'btn btn-default btn-block', 'data-dismiss' => 'modal']) . '</div><div class="col-md-6">' . Html::button('Accept', ['id' => $this->imageOptions['id'].'_button_accept', 'class' => 'btn btn-primary btn-block cropper-done']) . '</div></div>',
 			'size' => Modal::SIZE_LARGE,
+			'clientOptions' => ['backdrop' => 'static'] //To prevent closing when you drag outside the modal window
 		]);
 
 			echo Html::beginTag('div', ['id' => 'image-source'.$this->imageOptions['id'], 'class' => 'row cropper-body']);
