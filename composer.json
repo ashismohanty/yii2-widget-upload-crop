@@ -3,7 +3,7 @@
     "description": "Form input widget that lets users to upload an image alongside its cropping dimensions.",
     "keywords": ["yii2", "form", "widget"],
     "type": "yii2-extension",
-    "license": "BSD",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ashis Mohanty",
