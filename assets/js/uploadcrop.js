@@ -5,7 +5,7 @@
  * Year: 2015
  * 
  * Modified by: Ashis Kumar Mohanty
- * Year: 2017
+ * Year: 2018
  */
 
 (function(factory) {
