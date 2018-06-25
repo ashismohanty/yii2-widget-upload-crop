@@ -11,7 +11,7 @@ This Yii2 widget is upgraded from [Patroklo/yii2-widget-upload-crop](https://git
 This widget adds a new file input field that lets the user to upload images to the server through forms alongside the necessary data to be able to crop it. This data is obtained with javaScript with a crop selector that the user can use through a modal that it's oppened in the moment of selecting an image in the file input field.
 
 Developed by Joseba Juániz ([@Patroklo](http://twitter.com/Patroklo))
-Modified by Ashis Mohanty ([@uitrick](http://twitter.com/uitrick))
+Modified by Ashis Mohanty ([@uitrick](http://twitter.com/uitrick)) 
 
 [Spanish version](https://github.com/Patroklo/yii2-widget-upload-crop/blob/master/README_spanish.md)
 
