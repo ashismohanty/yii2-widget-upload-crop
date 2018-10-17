@@ -5,7 +5,7 @@
  * Year: 2015
  * 
  * Modified by: Ashis Kumar Mohanty
- * Year: 2017
+ * Year: 2018
  */
 
 (function(factory) {
@@ -88,7 +88,7 @@
 
         initModal: function() {
             this.$avatarModal.modal({
-		backdrop: 'static',
+                backdrop: 'static',
                 keyboard: false,
                 show: false
             });
@@ -210,7 +210,7 @@
 
                 //set all crop options
                 var cropOptions = this._jcropOptions;
-                cropOptions.preview = this.$avatarPreview.selector;
+                cropOptions.preview = this.$avatarPreview;
                 cropOptions.crop = function(e) {
                     var json = [
                         '{"x":' + e.x,
@@ -263,7 +263,7 @@
 
                 //add a class to main container
                 this.$container.addClass('cropper-done');
-                
+
                 this.stopCropper();
                 this.$avatarModal.modal('hide');
                 $(document).trigger('cropdone');
