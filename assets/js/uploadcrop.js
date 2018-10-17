@@ -266,6 +266,7 @@
                 
                 this.stopCropper();
                 this.$avatarModal.modal('hide');
+                $(document).trigger('cropdone');
             }
         },
 
